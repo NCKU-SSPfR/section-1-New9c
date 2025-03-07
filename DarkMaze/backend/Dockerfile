@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src/ ./src/
 
+# Change ownership to the non-root user
+RUN chown -R nonrooter:nonrooter /backend
 # Switch to non-root user
 USER nonrooter
 
